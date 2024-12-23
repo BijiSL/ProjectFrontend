@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
+  background-image: url('images/addmentor.avif'); 
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-position: center; 
+  height: 100vh; 
+  width: 100%; 
+    
+       }
+  
+  input-field {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .typography-header {
+    margin-bottom: 20px;
+    text-align: center;
+  }
