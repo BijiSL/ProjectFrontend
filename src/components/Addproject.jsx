@@ -12,11 +12,11 @@ const Addproject = () => {
   
   useEffect(() => {
     // Fetching projects and mentors
-    axios.get('http://localhost:4000/admin/project/get').then((res) => {
+    axios.get('https://ictak-internship-w182.onrender.com/admin/project/get').then((res) => {
       console.log('Projects fetched:', res.data);
       setProjects(res.data);
     });
-    axios.get('http://localhost:4000/admin/mentor/get').then((res) => {
+    axios.get('https://ictak-internship-w182.onrender.com/admin/mentor/get').then((res) => {
       console.log('Mentors fetched:', res.data);
       setMentors(res.data);
     });
@@ -27,7 +27,7 @@ const Addproject = () => {
   }
   const submit=()=>{
     console.log(users);
-      axios.post('http://localhost:4000/admin/project/add',users)
+      axios.post('https://ictak-internship-w182.onrender.com/admin/project/add',users)
       .then((res)=>{
 console.log(res)
       })
@@ -49,7 +49,7 @@ console.log(error);
   // Assign
   const assign = async () => {
     try {
-      await axios.post('http://localhost:4000/admin/assignProject', {
+      await axios.post('https://ictak-internship-w182.onrender.com/admin/assignProject', {
         project_id: selectedProject,
         mentor_id: selectedMentor,
       });

@@ -15,7 +15,7 @@ const Login = () => {
     const handleLogin = async (e) => {
             e.preventDefault();
         try{
-            const { data } = await axiosInstance.post('http://localhost:4000/admin/login', { email, password });
+            const { data } = await axiosInstance.post('https://ictak-internship-w182.onrender.com/admin/login', { email, password });
             localStorage.setItem('role', data.role);
             localStorage.setItem('token', data.token);
            const mentorId = localStorage.setItem('mentorId',data.mentorId);
@@ -33,7 +33,7 @@ const Login = () => {
             alignItems: 'center',
             height: '100vh',
             backgroundColor: '#f5f5f5',
-            backgroundImage: "url('public/images/Login.avif')",
+            backgroundImage: "url('/images/Login.avif')",
       backgroundSize: 'cover', 
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',

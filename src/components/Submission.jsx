@@ -15,14 +15,14 @@ const Submission = () => {
 
   // Fetch submissions
   useEffect(()=>{
-    axios.get("http://localhost:4000/mentor/submission/get").then((res)=>{
+    axios.get("https://ictak-internship-w182.onrender.com/mentor/submission/get").then((res)=>{
       setSubmissions(res.data);
     });
       },[]);
 
   // Add new submission
   const handleAdd = () => {
-    axios.post("http://localhost:4000/mentor/submission/add", newSubmission)
+    axios.post("https://ictak-internship-w182.onrender.com/mentor/submission/add", newSubmission)
     .then((res) => {
       setSubmissions([...submissions, res.data]);
       setNewSubmission({ student:"",status: "None", marks: 0, comments: "" });
@@ -31,7 +31,7 @@ const Submission = () => {
   };
 
   const fetchproject=()=>{
-    axiosInstance.get('http://localhost:4000/admin/project/get',projects)
+    axiosInstance.get('https://ictak-internship-w182.onrender.com/admin/project/get',projects)
     .then((res)=>{
     console.log(res.data)
     setProjects(res.data);
@@ -42,7 +42,7 @@ const Submission = () => {
     };
   // Update submission
   const handleSave = (id, updatedData) => {
-    axios.put(`http://localhost:4000/mentor/submission/update/${id}`,updatedData)
+    axios.put(`https://ictak-internship-w182.onrender.com/mentor/submission/update/${id}`,updatedData)
     .then((res)=>{
     setSubmissions(res.data)
    }) .catch((err) => {
@@ -53,13 +53,13 @@ const Submission = () => {
    fetchproject();},[]);
 // Delete
 const handleDelete=(id)=>{
-axios.delete(`http://localhost:4000/mentor/submission/delete/${id}`)
+axios.delete(`https://ictak-internship-w182.onrender.com/mentor/submission/delete/${id}`)
 .then(()=>{
   setSubmissions(submissions.filter((item)=>item._id!==id))
 })
 }
 const handleView=(id)=>{
-  axios.delete(`http://localhost:4000/mentor/submission/projects/${id}`)
+  axios.delete(`https://ictak-internship-w182.onrender.com/mentor/submission/projects/${id}`)
   .then(()=>{
     setSubmissions(submissions.filter((item)=>item._id!==id))
   })

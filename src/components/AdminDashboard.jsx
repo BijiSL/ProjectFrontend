@@ -17,7 +17,7 @@ const AdminDashboard = () => {
     const fetchmentor=()=>{
    
 axiosInstance
-.get('http://localhost:4000/admin/mentor/get',mentors)
+.get('https://ictak-internship-w182.onrender.com/admin/mentor/get',mentors)
 .then((res)=>{
   // console.log(res.data)
   setMentors(res.data);
@@ -29,7 +29,7 @@ useEffect(()=>{
 fetchproject();},[]);
 
 const fetchproject=()=>{
-axiosInstance.get('http://localhost:4000/admin/project/get',projects)
+axiosInstance.get('https://ictak-internship-w182.onrender.com/admin/project/get',projects)
 .then((res)=>{
 console.log(res.data)
 setProjects(res.data);
@@ -40,7 +40,7 @@ setProjects(res.data);
 };
 const mentordelete=(id)=>{
     
-  axiosInstance.delete(`http://localhost:4000/admin/mentor/del/${id}`)
+  axiosInstance.delete(`https://ictak-internship-w182.onrender.com/admin/mentor/del/${id}`)
 
    .then(()=>{fetchmentor()})
    .catch((error)=>{
@@ -48,7 +48,7 @@ const mentordelete=(id)=>{
    })}
    const projectdelete=(id)=>{
     
-    axiosInstance.delete(`http://localhost:4000/admin/project/del/${id}`)
+    axiosInstance.delete(`https://ictak-internship-w182.onrender.com/admin/project/del/${id}`)
   
      .then(()=>{fetchproject()})
      .catch((error)=>{
@@ -74,7 +74,7 @@ const mentordelete=(id)=>{
     }
   return (
     <div  style={{
-      backgroundImage: "url('public/images/admindash.jpg')",
+      backgroundImage: "url('/images/admindash.jpg')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',

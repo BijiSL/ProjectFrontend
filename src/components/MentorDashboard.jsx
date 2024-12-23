@@ -19,7 +19,7 @@ const MentorDashboard = () => {
       return;
     }
     try {
-      const res=await axios.get(`http://localhost:4000/mentor/projects/${mentorId}`);
+      const res=await axios.get(`https://ictak-internship-w182.onrender.com/mentor/projects/${mentorId}`);
       console.log("projects response:",res.data);
       setProjects(res.data);
     } catch (error) {
@@ -33,7 +33,7 @@ const MentorDashboard = () => {
   getPdf();
   },[]);
 const getPdf=async()=>{
-  const result=await axios.get("http://localhost:4000/mentor/get-files");
+  const result=await axios.get("https://ictak-internship-w182.onrender.com/mentor/get-files");
   console.log(result.data.data);
   setAllImage(result.data.data);
 };
@@ -43,7 +43,7 @@ const formData=new FormData();
 formData.append("title",title);
 formData.append("file",file);
 console.log(title,file);
-const result =await axios.post("http://localhost:4000/mentor/upload-files",formData,{
+const result =await axios.post("https://ictak-internship-w182.onrender.com/mentor/upload-files",formData,{
 headers:{"content-type":"multipart/form-data"},
 
   });
@@ -53,7 +53,7 @@ if(result.data.status=="ok"){
 }
 }
 const showPdf=(pdf)=>{
-  window.open(`http://localhost:4000/mentor/get-files`);
+  window.open(`https://ictak-internship-w182.onrender.com/mentor/get-files`);
 }
 const styles = {
   container: {

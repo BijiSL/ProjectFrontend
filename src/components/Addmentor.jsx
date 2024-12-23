@@ -35,7 +35,7 @@ const Addmentor = () => {
   const submit = () => {
     if (location.state!=null) {
       axiosInstance
-        .put(`http://localhost:4000/admin/mentor/edit/${location.state.val._id}`, form)
+        .put(`https://ictak-internship-w182.onrender.com/admin/mentor/edit/${location.state.val._id}`, form)
         .then(() => {
           alert('Updated successfully');
           navigate('/addmentor');
@@ -43,7 +43,7 @@ const Addmentor = () => {
         .catch((error) => console.error(error));
     } else {
       axiosInstance
-        .post('http://localhost:4000/admin/mentor/add', form)
+        .post('https://ictak-internship-w182.onrender.com/admin/mentor/add', form)
         .then((res) => {
           alert(res.data.message);
           navigate('/addmentor');
@@ -54,7 +54,7 @@ const Addmentor = () => {
 
   return (
     <div style={{
-      backgroundImage: "url('public/images/addmentor.avif')",
+      backgroundImage: "url('images/addmentor.avif')",
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
